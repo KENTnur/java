@@ -1,3 +1,4 @@
+package com.education.projectteam.models;
 import java.util.Collection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -8,12 +9,25 @@ import jakarta.persistence.Id;
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name="first_name")
     private String firstName;
+
+    @Column(name="last_name")
     private String lastName;
     private String email;
     private String password;
+
+    @ManytoMany(fetch = FetchType.EAGER , cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "users_roles",
+            joinColumns = @JoinColumn(
+                    name = "user_id" , referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(
+                    name = "role_id" , referencedColumnName = "id"))
+    )
     private Collection<Role> roles;
 
     public User(String firstName, String lastName, String email, String password, Collection<Role> roles) {
