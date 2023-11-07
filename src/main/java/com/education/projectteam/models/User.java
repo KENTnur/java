@@ -1,11 +1,10 @@
 package com.education.projectteam.models;
 import java.util.Collection;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+
+import jakarta.persistence.*;
+
 @Entity
-@Table(name = "user" , uniqueConstraints = @uniqueConstraints(columnNames = "email"))
+@Table(name = "user", uniqueConstraints = @UniqueConstraint(columnNames = "email"))
 public class User {
 
     @Id
@@ -20,14 +19,13 @@ public class User {
     private String email;
     private String password;
 
-    @ManytoMany(fetch = FetchType.EAGER , cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.EAGER , cascade = CascadeType.ALL)
     @JoinTable(
             name = "users_roles",
             joinColumns = @JoinColumn(
                     name = "user_id" , referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(
                     name = "role_id" , referencedColumnName = "id"))
-    )
     private Collection<Role> roles;
 
     public User(String firstName, String lastName, String email, String password, Collection<Role> roles) {
@@ -36,6 +34,10 @@ public class User {
         this.email = email;
         this.password = password;
         this.roles = roles;
+    }
+
+    public User() {
+
     }
 
     public Long getId() {

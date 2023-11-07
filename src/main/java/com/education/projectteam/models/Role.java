@@ -1,4 +1,6 @@
 package com.education.projectteam.models;
+import jakarta.persistence.*;
+
 import java.util.Collection;
 
 @Entity

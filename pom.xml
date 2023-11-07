@@ -54,6 +54,16 @@
             <artifactId>spring-context</artifactId>
             <version>6.0.11</version>
         </dependency>
+        <dependency>
+            <groupId>org.hibernate.orm</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>6.2.13.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jgrapht</groupId>
+            <artifactId>jgrapht-core</artifactId>
+            <version>1.4.0</version>
+        </dependency>
     </dependencies>
 
     <build>
