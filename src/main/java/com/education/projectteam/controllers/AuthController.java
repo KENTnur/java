@@ -33,9 +33,9 @@ public class AuthController {
         this.userService = userService;
     }
 
-    @GetMapping("index")
+    @GetMapping("main")
     public String home(){
-        return "index";
+        return "main";
     }
 
     @GetMapping("/login")
