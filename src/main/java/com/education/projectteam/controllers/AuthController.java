@@ -2,21 +2,10 @@ package com.education.projectteam.controllers;
 
 import com.education.projectteam.Dto.UserDto;
 import com.education.projectteam.models.User;
-import com.education.projectteam.repo.UserRepository;
 import com.education.projectteam.service.UserService;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
 import org.springframework.ui.Model;
-import org.springframework.web.servlet.ModelAndView;
-
-import java.util.Objects;
-
 import jakarta.validation.Valid;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -27,7 +16,7 @@ import java.util.List;
 @Controller
 public class AuthController {
 
-    private UserService userService;
+    final private UserService userService;
 
     public AuthController(UserService userService) {
         this.userService = userService;
