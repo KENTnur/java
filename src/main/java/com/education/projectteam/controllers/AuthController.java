@@ -33,7 +33,7 @@ public class AuthController {
         this.userService = userService;
     }
 
-    @GetMapping("main")
+    @GetMapping("/main")
     public String home(){
         return "main";
     }
