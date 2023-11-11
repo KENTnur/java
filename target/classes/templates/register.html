@@ -404,6 +404,10 @@
 </head>
 <body>
 <div class="login-card-container">
+    <div th:if="${param.success}">
+        <div class="alert alert-info">You've successfully registered
+            to our app!</div>
+    </div>
     <div class="login-card">
         <div class="login-card-header">
             <h1>Create account</h1>
@@ -422,7 +426,7 @@
                        id="emailForm"
                        name="username"
                        th:field="*{firstName}"
-                       type="text">
+                >
                 <p th:errors="*{firstName}" class="text-danger"
                    th:if="${#fields.hasErrors('firstName')}">
                 </p>
@@ -441,8 +445,7 @@
             </div>
             <div class="form-item">
                 <span class="form-item-icon material-symbols-rounded" for="username">mail</span>
-                <input type="text"
-                       id="emailForm2"
+                <input id="emailForm2"
                        name="email"
                        placeholder="Enter email address"
                        th:field="*{email}"
@@ -459,7 +462,6 @@
                        name="password"
                        placeholder="Enter password"
                        th:field="*{password}"
-                       type="password"
                 />
                 <p th:errors="*{password}" class="text-danger"
                    th:if="${#fields.hasErrors('password')}">
@@ -467,7 +469,7 @@
             </div>
             <button type="submit">Register</button>
             <div class="login-card-footer">
-                Have an account <a th:href="@{/login}"> LogIn</a>
+                Have an account <a th:href="@{/login}"> Log In</a>
             </div>
         </form>
     </div>
