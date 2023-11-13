@@ -1,6 +1,7 @@
 package com.education.projectteam.service.Impl;
 
 import com.education.projectteam.Dto.UserDto;
+import com.education.projectteam.adapter.UserAdapter;
 import com.education.projectteam.models.Role;
 import com.education.projectteam.models.User;
 import com.education.projectteam.repo.RoleRepository;
@@ -53,18 +54,18 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<UserDto> findAllUsers() {
         List<User> users = userRepository.findAll();
-        return users.stream().map((user) -> convertEntityToDto(user))
+        return users.stream().map(UserAdapter::toDto)
                 .collect(Collectors.toList());
     }
 
-    private UserDto convertEntityToDto(User user){
-        UserDto userDto = new UserDto();
-        String[] name = user.getName().split(" ");
-        userDto.setFirstName(name[0]);
-        userDto.setLastName(name[1]);
-        userDto.setEmail(user.getEmail());
-        return userDto;
-    }
+//    private UserDto convertEntityToDto(User user){
+//        UserDto userDto = new UserDto();
+//        String[] name = user.getName().split(" ");
+//        userDto.setFirstName(name[0]);
+//        userDto.setLastName(name[1]);
+//        userDto.setEmail(user.getEmail());
+//        return userDto;
+//    }
 
     private Role checkRoleExist() {
         Role role = new Role();
