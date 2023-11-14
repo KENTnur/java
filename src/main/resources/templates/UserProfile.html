@@ -11,20 +11,79 @@
             font-family: 'Poppins', sans-serif;
         }
         .main-div{
-            top: 150px;
+            margin-left: 10%;
             display: flex;
             flex-direction: row;
-            margin-left: 150px;
-            margin-right: 150px ;
+            height: 100vh;
+            width: 100vh;
+            justify-content: center;
+            margin-top: -2%;
         }
         .col-first{
             display: flex;
             flex-direction: column;
+            background: #b0ac94;
+            width: 50%;
         }
-        .img img{
-            width: 200px;
-            height: 200px;
+        .img{
+            align-content: center;
+            justify-content: center;
+            margin-top: 50%;
+            align-items: center;
+            justify-content: center;
+        }
+        .div-img{
+            width: 60%;
+            height: 30vh;
+            /*width: 180px;*/
+            /*height:250px;*/
             border-radius: 10px;
+            padding: 10px;
+            margin-left: 19%;
+        }
+        .div-container{
+            background: rgb(251,243,235);
+            display: flex;
+            flex-direction: column;
+        }
+        .btn{
+            border-radius: 25px;
+            color: #f37a63;
+            background: white;
+            margin: 10px;
+            border: 1px solid #f37a63;
+        }
+        .btn-div{
+            display: flex;
+            flex-direction: row;
+            color: #f37a63;
+        }
+        .phone{
+            display: flex;
+            flex-direction: row;
+
+        }
+        .div-h1-first{
+            align-content: center;
+            justify-content: center;
+            margin-bottom: 0%;
+        }
+        .City{
+            margin-top: 0%;
+            margin-left: 38%;
+            font-size: 14px;
+            font-family: "sans-serif";
+        }
+        .col-last{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+            width: 50%;
+        }
+        .user-h1{
+            margin-left: 20%;
+            width: 50%;
         }
     </style>
 </head>
@@ -32,10 +91,15 @@
 <div class="main-div">
     <div class="col-first">
         <div class="img">
-            <img src="logo.jpg" alt="UserProfile">
+            <img src="../static/logo.jpg" alt="UserProfile" class="div-img">
         </div>
         <div class="nameandlastname">
-            <h1>
+            <h1 class="div-h1-first"
+                style="
+                    margin-left: 17%;
+                    font-size: 30px;
+                    font-family: sans-serif"
+            >
                 Name and LastName
             </h1>
         </div>
@@ -61,8 +125,10 @@
                 <p>Date</p>
             </div>
         </container>
-        <p class="editProfile">Edit Profile ----</p>
-        <button class="btn" type="submit">-></button>
+        <div class="btn-div">
+            <p class="editProfile">Edit Profile ----</p>
+            <button class="btn" type="submit">-></button>
+        </div>
     </div>
 </div>
 </body>
