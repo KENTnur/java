@@ -2,9 +2,130 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>User Profile</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,600,0,0" />
+    <style>
+        body{
+            width: 100%;
+            height: 100%;
+            font-family: 'Poppins', sans-serif;
+        }
+        .main-div{
+            margin-left: 10%;
+            display: flex;
+            flex-direction: row;
+            height: 100vh;
+            width: 100vh;
+            justify-content: center;
+            margin-top: -2%;
+        }
+        .col-first{
+            display: flex;
+            flex-direction: column;
+            background: #b0ac94;
+            width: 50%;
+        }
+        .img{
+            align-content: center;
+            justify-content: center;
+            margin-top: 50%;
+            align-items: center;
+            justify-content: center;
+        }
+        .div-img{
+            width: 60%;
+            height: 30vh;
+            /*width: 180px;*/
+            /*height:250px;*/
+            border-radius: 10px;
+            padding: 10px;
+            margin-left: 19%;
+        }
+        .div-container{
+            background: rgb(251,243,235);
+            display: flex;
+            flex-direction: column;
+        }
+        .btn{
+            border-radius: 25px;
+            color: #f37a63;
+            background: white;
+            margin: 10px;
+            border: 1px solid #f37a63;
+        }
+        .btn-div{
+            display: flex;
+            flex-direction: row;
+            color: #f37a63;
+        }
+        .phone{
+            display: flex;
+            flex-direction: row;
+
+        }
+        .div-h1-first{
+            align-content: center;
+            justify-content: center;
+            margin-bottom: 0%;
+        }
+        .City{
+            margin-top: 0%;
+            margin-left: 38%;
+            font-size: 14px;
+            font-family: "sans-serif";
+        }
+        .col-last{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+            width: 50%;
+        }
+    </style>
 </head>
 <body>
-
+<div class="main-div">
+    <div class="col-first">
+        <div class="img">
+            <img src="../static/logo.jpg" alt="UserProfile" class="div-img">
+        </div>
+        <div class="nameandlastname">
+            <h1 class="div-h1-first"
+                style="
+                    margin-left: 17%;
+                    font-size: 30px;
+                    font-family: sans-serif"
+            >
+                Name and LastName
+            </h1>
+        </div>
+        <div class="City">
+            <p>City and Country</p>
+        </div>
+    </div>
+    <div class="col-last">
+        <h1 class="user-h1">
+            User Profile
+        </h1>
+        <container class="div-container">
+            <div class="phone">
+                <h6>Phone:</h6>
+                <p>Number</p>
+            </div>
+            <div class="phone">
+                <h6>Email:</h6>
+                <p>email@gmail.com</p>
+            </div>
+            <div class="phone">
+                <h6>BirthDay:</h6>
+                <p>Date</p>
+            </div>
+        </container>
+        <div class="btn-div">
+            <p class="editProfile">Edit Profile ----</p>
+            <button class="btn" type="submit">-></button>
+        </div>
+    </div>
+</div>
 </body>
 </html>

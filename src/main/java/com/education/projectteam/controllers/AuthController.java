@@ -63,4 +63,8 @@ public class AuthController {
         model.addAttribute("users", users);
         return "users";
     }
+    @GetMapping("/userProfile")
+    public String listRegisteredUsers(){
+        return "UserProfile";
+    }
 }
