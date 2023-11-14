@@ -1,11 +1,4 @@
-<html lang="en" xmlns: th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <style type="text/css">
+
         *{
             margin: 0;
             padding: 0;
@@ -34,8 +27,6 @@
         }
         header .logo{
             font-size: 20px;
-            width: 60px;
-            height: 40px;
             font-weight: 900;
             color: #000;
             transition: .5s;
@@ -76,9 +67,3 @@
         nav ul li:hover> ul{
             display: initial;
         }
-    </style>
-</head>
-<body>
-    <header th:insert="header :: hearder"></header>
-</body>
-</html>

@@ -34,6 +34,8 @@
         }
         header .logo{
             font-size: 20px;
+            width: 60px;
+            height: 40px;
             font-weight: 900;
             color: #000;
             transition: .5s;
@@ -77,30 +79,6 @@
     </style>
 </head>
 <body>
-    <header>
-        <a href="a" class="logo">Home</a>
-        <nav>
-            <ul>
-<!--                <li><a href="">Home</a> </li>-->
-                <li><a href="">Courses &blacktriangledown;</a>
-                      <ul>
-                        <li><a href="#">HTML</a></li>
-                        <li><a href="#">CSS</a></li>
-                        <li><a href="#">JavaScript &blacktriangledown;</a>
-                            <ul>
-                                <li><a href="#">JQuery</a></li>
-                                <li><a href="#">Node.js</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li><a href="">My education </a></li>
-                <li><a href="">Library</a></li>
-                <li><a href="">Log in</a></li>
-                <li><a href="">Sing up</a></li>
-            </ul>
-        </nav>
-    </header>
-
+    <header th:insert="header :: hearder"></header>
 </body>
 </html>

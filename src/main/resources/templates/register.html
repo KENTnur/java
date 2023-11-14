@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="static/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,600,0,0" />
     <title>Registration Page</title>
     <style>
@@ -15,7 +15,7 @@
         body {
             font-family: 'Poppins', sans-serif;
             min-height: 100vh;
-            background: linear-gradient(to right, #333399, #ff00cc);
+            background: linear-gradient(to right, black, white);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -24,6 +24,7 @@
 
         /* Login Card */
         .login-card {
+            margin-top: 8%;
             width: 450px;
             background: rgba(255, 255, 255, .5);
             padding: 4rem;
@@ -296,11 +297,11 @@
     </style>
 </head>
 <body>
+<div th:if="${param.success}">
+    <div class="alert alert-info">You've successfully registered
+        to our app!</div>
+</div>
 <div class="login-card-container">
-    <div th:if="${param.success}">
-        <div class="alert alert-info">You've successfully registered
-            to our app!</div>
-    </div>
     <div class="login-card">
         <div class="login-card-header">
             <h1>Зарегистрироваться</h1>
@@ -313,10 +314,10 @@
               th:object="${user}">
 
             <div class="form-item">
-                <span class="form-item-icon material-symbols-rounded" for="username">mail</span>
+                <span class="form-item-icon material-symbols-rounded" for="username">person</span>
                 <input type="text"
                        placeholder="Enter first name"
-                       id="emailForm"
+                       id="username"
                        name="username"
                        th:field="*{firstName}"
                 >
@@ -325,9 +326,9 @@
                 </p>
             </div>
             <div class="form-item">
-                <span class="form-item-icon material-symbols-rounded" for="username">mail</span>
+                <span class="form-item-icon material-symbols-rounded" for="username">person</span>
                 <input type="text"
-                       id="emailForm1"
+                       id="username1"
                        name="lastName"
                        placeholder="Enter last name"
                        th:field="*{lastName}"
@@ -358,7 +359,7 @@
                 />
                 <p th:errors="*{password}" class="text-danger"
                    th:if="${#fields.hasErrors('password')}">
-                </p>>
+                </p>
             </div>
             <button type="submit">Register</button>
             <div class="login-card-footer">
