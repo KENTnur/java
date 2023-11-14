@@ -11,6 +11,10 @@ public class UserAdapter {
                 .email(user.getEmail())
                 .firstName(names[0])
                 .lastName(names[1])
+                .nickname(user.getNickname())
+                .linkSocial(user.getLinkSocial())
+                .location(user.getLocation())
+                .university(user.getUniversity())
                 .password(user.getPassword())
                 .build();
     }

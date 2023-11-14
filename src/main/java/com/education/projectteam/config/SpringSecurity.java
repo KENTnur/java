@@ -36,7 +36,7 @@ public class SpringSecurity {
                         authorize.requestMatchers("/register/**").permitAll()
                                 .requestMatchers("/main").permitAll()
                                 .requestMatchers("/static/**").permitAll()
-                                .requestMatchers("/userProfile").permitAll()
+                                .requestMatchers("/userProfile/{id}").permitAll()
                                 .requestMatchers("/users").permitAll().requestMatchers("/img").permitAll()
                 ).formLogin(
                         form -> form

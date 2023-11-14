@@ -2,6 +2,7 @@ package com.education.projectteam.controllers;
 
 import com.education.projectteam.Dto.UserDto;
 import com.education.projectteam.models.User;
+import com.education.projectteam.repo.UserRepository;
 import com.education.projectteam.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,17 +10,23 @@ import jakarta.validation.Valid;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class AuthController {
 
     final private UserService userService;
 
-    public AuthController(UserService userService) {
+    final private UserRepository userRepository;
+
+    public AuthController(UserService userService, UserRepository userRepository) {
         this.userService = userService;
+        this.userRepository = userRepository;
     }
 
     @GetMapping("/main")
@@ -63,8 +70,16 @@ public class AuthController {
         model.addAttribute("users", users);
         return "users";
     }
-    @GetMapping("/userProfile")
-    public String listRegisteredUsers(){
+    @GetMapping("/userProfile/{id}")
+    public String listRegisteredUsers(@PathVariable(value = "id") long id, Model model){
+        if(!userRepository.existsById(id)){
+            return "redirect:/blog";
+        }
+        Optional<User> post =  userRepository.findById(id);
+        ArrayList<User> result = new ArrayList<>();
+        post.ifPresent(result::add);
+        model.addAttribute("user",result);
+
         return "UserProfile";
     }
 }
