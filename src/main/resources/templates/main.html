@@ -32,6 +32,7 @@
             align-items: center;
             padding: 0 8%;
             box-shadow: 0 1px 5px #000;
+            z-index: 3;
         }
         header .logo{
             font-size: 20px;
@@ -152,6 +153,53 @@
             color: #fff;
             transform: translateY(-8px);
         }
+        /*.search-box:hover > .search-txt{*/
+        /*    width: 260px;*/
+        /*    padding: 0 6px;*/
+
+        /*}*/
+        body .search-box{
+            padding: 0;
+            padding: 0;
+        }
+        .search-box{
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, 50%);
+            background: #f6fbff;
+            height: 40px;
+            border-radius: 40px;
+            padding: 10px;
+
+        }
+        .search-btn{
+            color: #4A4A4A;
+            float: right;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #f6fbff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+        }
+        .search-txt{
+            border: none;
+            background: none;
+            outline: none;
+            float: left;
+            position: relative;
+            left: 10%;
+            padding: 0;
+            color: #000;
+            font-size: 16px;
+            /*transition: 0.4s;*/
+            line-height: 40px;
+            width: 240px;
+
+        }
     </style>
 
 </head>
@@ -196,6 +244,10 @@
 <!--        </div>-->
 <!--    </div>-->
     </div>
+    <div class="search-box">
+        <input class="search-txt" type="text" name="" placeholder="Type to search">
+        <a class = "search-btn" href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+    </div>
     <!-- FOOTER START -->
     <div class="footer">
         <div class="footer-left">
@@ -225,6 +277,7 @@
         </div>
 
     </div>
+
 
 </body>
 </html>
