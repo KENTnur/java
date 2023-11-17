@@ -312,7 +312,7 @@
                 <ul class="words-with-icons">
                     <li th:text="${el.university}">University</li>
                     <li th:text="${el.location}">Location</li>
-                    <li>Time</li>
+                    <li id="time">Time</li>
                     <li th:text="${el.linkSocial}">Link</li>
                 </ul>
                 <hr style="margin-top: 15%;">
@@ -327,5 +327,13 @@
     </div>
 
     <div th:insert="footer"></div>
+
+<script>
+    let time = document.getElementById("time");
+    setInterval(() =>{
+        let d = new Date();
+        time.innerHTML = d.toLocaleTimeString();
+    },1000);
+</script>
 </body>
 </html>
