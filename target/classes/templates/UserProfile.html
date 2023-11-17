@@ -3,9 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <title>User Profile</title>
+    <script src="https://kit.fontawesome.com/30555688ec.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,600,0,0" />
     <style>
+        .footer{
+            background-repeat: no-repeat;
+            background: #f6fbff;
+            background-position: center;
+            background-size: cover;
+            position: absolute;
+            left: 0;
+            top: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .footer-left, .footer-right{
+            flex-basis: 35%;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        .footer-left{
 
+            text-align: left;
+            color: #4A4A4A;
+        }
+
+        .footer-right{
+            text-align: right;
+            color: #4A4A4A;
+        }
+        .footer h3{
+            margin: 20px 0;
+            color: #4A4A4A;
+        }
+
+        .footer-center h3{
+            position: relative;
+            font-size: 40px;
+            /*top: 10%;*/
+            text-align: center;
+            margin: 40px 0px;
+        }
+        .footer p{
+            /*margin-top: 0.25cm;*/
+            margin-bottom: 0.25cm;
+        }
+
+        .footer-center{
+            color: #4A4A4A;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .social{
+            margin-top: 20px;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 25px;
+        }
+        .social .fa-brands{
+            /*border: 3px solid #4A4A4A;*/
+            cursor: pointer;
+            transition: .5s;
+            /*border-radius: 100%;*/
+        }
+        .social .fa-brands:hover{
+            background: #4A4A4A;
+            color: #fff;
+            transform: translateY(-8px);
+        }
         *{
             margin: 0;
             padding: 0;
@@ -183,7 +254,7 @@
     </style>
 </head>
 <body>
-<header th:fragment="hearder">
+<header>
     <a th:href="@{/main}">
     <img src="https://raw.githubusercontent.com/thqu1et/Education-Web/682b0c3bd40f09bd757ea5ac924b3b1eb036c078/src/main/resources/static/logo_askar.svg" alt="user-profile-img" class="logo">
     </a>
@@ -254,5 +325,7 @@
         <div class="col-second">
         </div>
     </div>
+
+    <div th:insert="footer"></div>
 </body>
 </html>

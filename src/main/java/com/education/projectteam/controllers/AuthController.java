@@ -73,13 +73,12 @@ public class AuthController {
     @GetMapping("/userProfile/{id}")
     public String listRegisteredUsers(@PathVariable(value = "id") long id, Model model){
         if(!userRepository.existsById(id)){
-            return "redirect:/blog";
+            return "redirect:/main";
         }
         Optional<User> post =  userRepository.findById(id);
         ArrayList<User> result = new ArrayList<>();
         post.ifPresent(result::add);
         model.addAttribute("user",result);
-
         return "UserProfile";
     }
 }
