@@ -1,7 +1,9 @@
 package com.education.projectteam.Dto;
 
+import jakarta.persistence.Column;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 @Getter
@@ -20,4 +22,12 @@ public class UserDto {
     private String email;
     @NotEmpty(message = "Password should not be empty")
     private String password;
+    @NotNull
+    private String nickname;
+    @NotNull
+    private String location;
+    @NotNull
+    private String linkSocial;
+    @NotNull
+    private String university;
 }

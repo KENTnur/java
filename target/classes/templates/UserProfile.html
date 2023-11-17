@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:margin-top="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>User Profile</title>
@@ -140,17 +140,55 @@
             border-radius: 6px;
             font-weight: normal;
             position: relative;
+            margin-bottom: 5%;
+        }
+        .links-span{
+            list-style: none;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            padding-inline-start: 40px;
+            padding-left: 0;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        .words-with-icons {
+            position: absolute;
+            margin-left: 3.4%;
+            margin-top: -5.9%;
+            line-height: 1.5;
+        }
+
+        .links-span li{
+            font-size: 14px;
+            display: list-item;
+            text-align: -webkit-match-parent;
+            width: 256px;
+            height: 25px;
+            padding: 4px 0px 0px 24px;
+            line-height: 20px;
+
+        }
+        .links-span li div{
+            width: 232px;
+            height: 21px;
+            font-size: 14px;
+        }
+        .links-span li span{
+            margin:4px 0px 0px -24px;
+            width: 16px;
+            height: 16px;
         }
     </style>
 </head>
 <body>
 <header th:fragment="hearder">
-<!--    <a href="a" class="logo">Home</a>-->
     <a th:href="@{/main}">
     <img src="https://raw.githubusercontent.com/thqu1et/Education-Web/682b0c3bd40f09bd757ea5ac924b3b1eb036c078/src/main/resources/static/logo_askar.svg" alt="user-profile-img" class="logo">
     </a>
     <nav>
-        <ul>
+        <ul th:each="el : ${user}">
             <!--                <li><a href="">Home</a> </li>-->
             <li><a href="">Courses &blacktriangledown;</a>
                 <ul>
@@ -166,7 +204,7 @@
             </li>
             <li><a href="">My education </a></li>
             <li><a href="">Library</a></li>
-            <li><a href="">User</a>
+            <li><a href="" th:text="${el.name}"></a>
                 <ul>
                     <li><a th:href="@{/logout}">Logout</a></li>
                 </ul>
@@ -176,7 +214,7 @@
 </header>
     <div class="main">
         <div class="col-first">
-            <div class="card-user">
+            <div class="card-user" th:each="el : ${user}">
                 <div class="card-uder-profile">
                     <div class="card-uder-profile-img">
                         <img src="https://raw.githubusercontent.com/thqu1et/Education-Web/682b0c3bd40f09bd757ea5ac924b3b1eb036c078/src/main/resources/static/logo_askar.svg" alt="user-profile-img" class="user-profile-img">
@@ -184,22 +222,37 @@
                 </div>
                 <div class="span-name-class">
                     <h1>
-                        <span class="name-lastname">Name and LastName</span>
+                        <span class="name-lastname" th:text="${el.name}"></span>
                     </h1>
                     <h1 >
-                        <span class="nickname">NickName</span>
+                        <span class="nickname" th:text="${el.nickname}">NickName</span>
                     </h1>
                 </div>
             </div>
-            <div>
+            <div style="width: 256px ; height: 31px" th:each="el : ${user}">
                 <button class="btn-edit" type="submit">
                     Edit profile
                 </button>
+                <ul class="links-span">
+                    <li><span class="form-item-icon material-symbols-rounded" >apartment</span></li>
+                    <li><span class="form-item-icon material-symbols-rounded" >location_on</span></li>
+                    <li><span class="form-item-icon material-symbols-rounded" >schedule</span></li>
+                    <li><span class="form-item-icon material-symbols-rounded" >attachment</span></li>
+                </ul>
+                <ul class="words-with-icons">
+                    <li th:text="${el.university}">University</li>
+                    <li th:text="${el.location}">Location</li>
+                    <li>Time</li>
+                    <li th:text="${el.linkSocial}">Link</li>
+                </ul>
+                <hr style="margin-top: 15%;">
+                <div style="margin-top: 5%;display: flex; flex-direction: row ">
+                    <h3>Highlights</h3>
+                    <h3 style="border:1px solid mediumpurple ; border-radius: 25px;text-align: center;color: mediumpurple; margin-left: 4%;width: 50px;height: 25px">PRO</h3>
+                </div>
             </div>
-
         </div>
         <div class="col-second">
-
         </div>
     </div>
 </body>

@@ -58,15 +58,6 @@ public class UserServiceImpl implements UserService {
                 .collect(Collectors.toList());
     }
 
-//    private UserDto convertEntityToDto(User user){
-//        UserDto userDto = new UserDto();
-//        String[] name = user.getName().split(" ");
-//        userDto.setFirstName(name[0]);
-//        userDto.setLastName(name[1]);
-//        userDto.setEmail(user.getEmail());
-//        return userDto;
-//    }
-
     private Role checkRoleExist() {
         Role role = new Role();
         role.setName("ROLE_ADMIN");
