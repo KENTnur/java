@@ -5,6 +5,7 @@
     <title>User Profile</title>
     <script src="https://kit.fontawesome.com/30555688ec.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,600,0,0" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <style>
         .footer{
             background-repeat: no-repeat;
@@ -163,7 +164,7 @@
             width: 260px;
             height: 260px;
             border:1px solid black;
-            border-radius: 25px;
+            border-radius: 50px;
         }
         .span-name-class{
             display: flex;
@@ -284,7 +285,10 @@
 </header>
     <div class="main">
         <div class="col-first">
-            <div class="card-user" th:each="el : ${user}">
+            <div class="card-user"
+                 th:each="el : ${user}"
+                 style="margin-bottom: 5%"
+            >
                 <div class="card-uder-profile">
                     <div class="card-uder-profile-img">
                         <img src="https://raw.githubusercontent.com/thqu1et/Education-Web/682b0c3bd40f09bd757ea5ac924b3b1eb036c078/src/main/resources/static/logo_askar.svg" alt="user-profile-img" class="user-profile-img">
@@ -300,8 +304,14 @@
                 </div>
             </div>
             <div style="width: 256px ; height: 31px" th:each="el : ${user}">
-                <button class="btn-edit" type="submit">
-                    Edit profile
+                <button class="btn-edit" >
+                    <a
+                       type="submit"
+                       th:href="'/userProfile/'+${el.id} + '/edit'"
+                       style="text-decoration: none;"
+                    >
+                        Edit profile
+                    </a>
                 </button>
                 <ul class="links-span">
                     <li><span class="form-item-icon material-symbols-rounded" >apartment</span></li>
@@ -327,7 +337,6 @@
     </div>
 
     <div th:insert="footer"></div>
-
 <script>
     let time = document.getElementById("time");
     setInterval(() =>{

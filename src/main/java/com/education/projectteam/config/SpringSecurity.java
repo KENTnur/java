@@ -37,12 +37,14 @@ public class SpringSecurity {
                                 .requestMatchers("/main").permitAll()
                                 .requestMatchers("/static/**").permitAll()
                                 .requestMatchers("/userProfile/{id}").permitAll()
+                                .requestMatchers("/userProfile/{id}/edit").permitAll()
                                 .requestMatchers("/users").permitAll().requestMatchers("/img").permitAll()
                 ).formLogin(
                         form -> form
                                 .loginPage("/login")
                                 .loginProcessingUrl("/login")
                                 .defaultSuccessUrl("/main")
+                                .defaultSuccessUrl("/userProfile/{id}/edit")
                                 .permitAll()
                 ).logout(
                         logout -> logout

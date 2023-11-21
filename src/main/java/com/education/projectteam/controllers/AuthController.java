@@ -8,10 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import jakarta.validation.Valid;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -80,5 +77,28 @@ public class AuthController {
         post.ifPresent(result::add);
         model.addAttribute("user",result);
         return "UserProfile";
+    }
+
+    @GetMapping("/userProfile/{id}/edit")
+    public String userProfileEdit(@PathVariable(value = "id") long id, Model model) {
+        if(!userRepository.existsById(id)){
+            return "redirect:/main";
+        }
+        Optional<User> post =  userRepository.findById(id);
+        ArrayList<User> result = new ArrayList<>();
+        post.ifPresent(result::add);
+        model.addAttribute("user",result);
+        return "UserProfileEdit";
+    }
+    @PostMapping("/userProfile/{id}/edit")
+    public String BlogPostUpdate (@PathVariable(value = "id") long id, @RequestParam String name, @RequestParam String nickname, @RequestParam String location , @RequestParam String link , @RequestParam String university , Model model) {
+        User user = userRepository.findById(id).orElseThrow();
+        user.setName(name);
+        user.setLinkSocial(link);
+        user.setNickname(nickname);
+        user.setLocation(location);
+        user.setUniversity(university);
+        userRepository.save(user);
+        return "redirect:/userProfile";
     }
 }
