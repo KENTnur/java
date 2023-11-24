@@ -44,7 +44,6 @@ public class SpringSecurity {
                                 .loginPage("/login")
                                 .loginProcessingUrl("/login")
                                 .defaultSuccessUrl("/main")
-                                .defaultSuccessUrl("/userProfile/{id}/edit")
                                 .permitAll()
                 ).logout(
                         logout -> logout

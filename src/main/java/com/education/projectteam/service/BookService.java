@@ -14,13 +14,10 @@ public class BookService {
     @Autowired
     BookRepository bookRepository;
 
-    public void  saveBookToDB(MultipartFile file,String name,String description
-            )
-    {
+    public void  saveBookToDB(MultipartFile file,String name,String description) {
         Book p = new Book();
         String fileName = StringUtils.cleanPath(file.getOriginalFilename());
-        if(fileName.contains(".."))
-        {
+        if(fileName.contains("..")) {
             System.out.println("not a a valid file");
         }
         try {
@@ -32,7 +29,6 @@ public class BookService {
 
         p.setName(name);
 //        p.setViews(views);
-
         bookRepository.save(p);
     }
     public List<Book> getAllBook()
@@ -43,22 +39,19 @@ public class BookService {
     {
         bookRepository.deleteById(id);
     }
-    public void chageBookName(Long id ,String name)
-    {
+    public void chageBookName(Long id ,String name) {
         Book p = new Book();
         p = bookRepository.findById(id).get();
         p.setName(name);
         bookRepository.save(p);
     }
-    public void changeBookDescription(Long id , String description)
-    {
+    public void changeBookDescription(Long id , String description) {
         Book p = new Book();
         p = bookRepository.findById(id).get();
         p.setDescription(description);
         bookRepository.save(p);
     }
-    public void changeBookPrice(Long id)
-    {
+    public void changeBookPrice(Long id) {
         Book p = new Book();
         p = bookRepository.findById(id).get();
 //        p.setViews(views);
