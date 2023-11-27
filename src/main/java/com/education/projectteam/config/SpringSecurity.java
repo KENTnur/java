@@ -34,6 +34,7 @@ public class SpringSecurity {
         http.csrf().disable()
                 .authorizeHttpRequests((authorize) ->
                         authorize.requestMatchers("/register/**").permitAll()
+                                .requestMatchers("/MyEducation").permitAll()
                                 .requestMatchers("/main").permitAll()
                                 .requestMatchers("/static/**").permitAll()
                                 .requestMatchers("/userProfile/{id}").permitAll()
@@ -44,7 +45,7 @@ public class SpringSecurity {
                                 .loginPage("/login")
                                 .loginProcessingUrl("/login")
                                 .defaultSuccessUrl("/main")
-                                .defaultSuccessUrl("/userProfile/{id}/edit")
+//
                                 .permitAll()
                 ).logout(
                         logout -> logout
