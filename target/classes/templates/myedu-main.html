@@ -1,0 +1,483 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <header th:fragment="header">-->
+
+<!--        <a th:href="@{/main}">-->
+<!--            <img src="https://raw.githubusercontent.com/thqu1et/Education-Web/682b0c3bd40f09bd757ea5ac924b3b1eb036c078/src/main/resources/static/logo_askar.svg" alt="user-profile-img" class="logo">-->
+<!--        </a>-->
+<!--        <nav>-->
+<!--            <ul>-->
+<!--                <li><a href="">Courses &blacktriangledown;</a>-->
+<!--                    <ul>-->
+<!--                        <li><a href="#">HTML</a></li>-->
+<!--                        <li><a href="#">CSS</a></li>-->
+<!--                        <li><a href="#">JavaScript &blacktriangledown;</a>-->
+<!--                            <ul>-->
+<!--                                <li><a href="#">JQuery</a></li>-->
+<!--                                <li><a href="#">Node.js</a></li>-->
+<!--                            </ul>-->
+<!--                        </li>-->
+<!--                    </ul>-->
+<!--                </li>-->
+<!--                <li><a href="">My education </a></li>-->
+<!--                <li><a href="">Library</a></li>-->
+<!--                <li><a th:href="@{/login}">Log in</a></li>-->
+<!--                <li><a th:href="@{/register}">Sing up</a></li>-->
+<!--            </ul>-->
+<!--        </nav>-->
+<!--    </header>-->
+<!--    ///-->
+<!--    <div class="footer " th:fragment="footer">-->
+<!--        <div class="footer-left">-->
+<!--            <h3>COMPANY</h3>-->
+<!--            <p>About us</p>-->
+<!--            <p>Products</p>-->
+<!--            <p>Vacancy</p>-->
+<!--            <p>FAQ</p>-->
+<!--        </div>-->
+<!--        <div class="footer-right">-->
+<!--            <h3>CONTACTS</h3>-->
+<!--            <p>email <i class="fa-solid fa-envelope"></i>: hello@btsdigital.kz</p>-->
+<!--            <p>phone number <i class="fa-solid fa-phone"></i>: +7 (776) 178-58-19</p>-->
+<!--            <p>location <i class="fa-solid fa-location-dot"></i>: Astana, Koshkarbaeva 1/4</p>-->
+<!--            <p>Support</p>-->
+<!--        </div>-->
+<!--        <div class="footer-center">-->
+<!--            <h3>SOCIAL</h3>-->
+<!--            <div class="social">-->
+<!--                <i class="fa-brands fa-instagram"></i>-->
+<!--                <i class="fa-brands fa-twitter"></i>-->
+<!--                <i class="fa-brands fa-facebook"></i>-->
+<!--                <i class="fa-brands fa-linkedin"></i>-->
+<!--            </div>-->
+<!--            <h5>CREATED BY INTERNS OF BTS DIGITAL, 2023</h5>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--</head>-->
+<!--<body>-->
+<!--    <style type="text/css">-->
+<!--        *{-->
+<!--            margin: 0;-->
+<!--            padding: 0;-->
+<!--            box-sizing: border-box;-->
+<!--            font-family: sans-serif;-->
+<!--            list-style: none;-->
+<!--            text-decoration: none;-->
+<!--        }-->
+<!--        body{-->
+<!--            height: 100vh;-->
+<!--            background: #fff no-repeat;-->
+<!--            background-size: cover;-->
+<!--            background-position: center;-->
+<!--        }-->
+<!--        header{-->
+<!--            position: fixed;-->
+<!--            top: 0;-->
+<!--            left: 0;-->
+<!--            right: 0;-->
+<!--            background: #f6fbff;-->
+<!--            display: flex;-->
+<!--            justify-content: space-between;-->
+<!--            align-items: center;-->
+<!--            padding: 0 8%;-->
+<!--            box-shadow: 0 1px 5px #000;-->
+<!--            z-index: 3;-->
+<!--        }-->
+<!--        header .logo{-->
+<!--            font-size: 20px;-->
+<!--            font-weight: 900;-->
+<!--            color: #000;-->
+<!--            transition: .5s;-->
+<!--        }-->
+<!--        header .logo:hover{-->
+<!--            transform: scale(1.2);-->
+<!--        }-->
+<!--        header nav ul li{-->
+<!--            position: relative;-->
+<!--            float: left;-->
+<!--        }-->
+
+<!--        header nav ul li a{-->
+<!--            padding: 15px;-->
+<!--            color: #000;-->
+<!--            font-size: 16px;-->
+<!--            display: block;-->
+<!--        }-->
+<!--        header nav ul li a:hover{-->
+
+<!--            background: #000;-->
+<!--            color: #f6fbff;-->
+<!--        }-->
+<!--        nav ul li ul{-->
+<!--            position: absolute;-->
+<!--            left: 0;-->
+<!--            width: 180px;-->
+<!--            background: #f6fbff;-->
+<!--            display: none;-->
+<!--        }-->
+<!--        nav ul li ul li{-->
+<!--            width: 100%;-->
+<!--            border: 1px solid rgba(0,0,0,.1);-->
+<!--        }-->
+<!--        nav ul li ul li ul{-->
+<!--            left: 180px;-->
+<!--            top: 0;-->
+<!--        }-->
+<!--        nav ul li:hover> ul{-->
+<!--            display: initial;-->
+<!--        }-->
+<!--        *{-->
+<!--            margin: 0;-->
+<!--            padding: 0;-->
+<!--            box-sizing: border-box;-->
+<!--        }-->
+<!--        .footer{-->
+<!--            background-repeat: no-repeat;-->
+<!--            background: #f6fbff;-->
+<!--            background-position: center;-->
+<!--            background-size: cover;-->
+<!--            position: absolute;-->
+<!--            left: 0;-->
+<!--            top: 100%;-->
+<!--            width: 100%;-->
+<!--            display: flex;-->
+<!--            justify-content: space-around;-->
+<!--            flex-wrap: wrap;-->
+<!--        }-->
+<!--        .footer-left, .footer-right{-->
+<!--            flex-basis: 35%;-->
+<!--            padding: 10px;-->
+<!--            margin-bottom: 20px;-->
+<!--        }-->
+<!--        .footer-left{-->
+
+<!--            text-align: left;-->
+<!--            color: #4A4A4A;-->
+<!--        }-->
+
+<!--        .footer-right{-->
+<!--            text-align: right;-->
+<!--            color: #4A4A4A;-->
+<!--        }-->
+<!--        .footer h3{-->
+<!--            margin: 20px 0;-->
+<!--            color: #4A4A4A;-->
+<!--        }-->
+
+<!--        .footer-center h3{-->
+<!--            position: relative;-->
+<!--            font-size: 40px;-->
+<!--            /*top: 10%;*/-->
+<!--            text-align: center;-->
+<!--            margin: 40px 0px;-->
+<!--        }-->
+<!--        .footer p{-->
+<!--            /*margin-top: 0.25cm;*/-->
+<!--            margin-bottom: 0.25cm;-->
+<!--        }-->
+
+<!--        .footer-center{-->
+<!--            color: #4A4A4A;-->
+<!--            position: absolute;-->
+<!--            bottom: 10px;-->
+<!--            left: 50%;-->
+<!--            transform: translate(-50%, -50%);-->
+<!--        }-->
+<!--        .social{-->
+<!--            margin-top: 20px;-->
+<!--            position: absolute;-->
+<!--            bottom: 10px;-->
+<!--            left: 50%;-->
+<!--            transform: translate(-50%, -50%);-->
+<!--            font-size: 25px;-->
+<!--        }-->
+<!--        .social .fa-brands{-->
+<!--            /*border: 3px solid #4A4A4A;*/-->
+<!--            cursor: pointer;-->
+<!--            transition: .5s;-->
+<!--            /*border-radius: 100%;*/-->
+<!--        }-->
+<!--        .social .fa-brands:hover{-->
+<!--            background: #4A4A4A;-->
+<!--            color: #fff;-->
+<!--            transform: translateY(-8px);-->
+<!--        }-->
+<!--    </style>-->
+<!--</body>-->
+<!--</html>-->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Education</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+
+
+        .panel {
+            display: flex;
+            flex-direction: column;
+            max-width: 200px;
+            margin: 20px;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #555;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+            list-style: none;
+            text-decoration: none;
+        }
+        body{
+            height: 100vh;
+            background: #fff no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+        header{
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #f6fbff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 8%;
+            box-shadow: 0 1px 5px #000;
+            z-index: 3;
+        }
+        header .logo{
+            font-size: 20px;
+            font-weight: 900;
+            color: #000;
+            transition: .5s;
+        }
+        header .logo:hover{
+            transform: scale(1.2);
+        }
+        header nav ul li{
+            position: relative;
+            float: left;
+        }
+
+        header nav ul li a{
+            padding: 15px;
+            color: #000;
+            font-size: 16px;
+            display: block;
+        }
+        header nav ul li a:hover{
+
+            background: #000;
+            color: #f6fbff;
+        }
+        nav ul li ul{
+            position: absolute;
+            left: 0;
+            width: 180px;
+            background: #f6fbff;
+            display: none;
+        }
+        nav ul li ul li{
+            width: 100%;
+            border: 1px solid rgba(0,0,0,.1);
+        }
+        nav ul li ul li ul{
+            left: 180px;
+            top: 0;
+        }
+        nav ul li:hover> ul{
+            display: initial;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .footer{
+            background-repeat: no-repeat;
+            background: #f6fbff;
+            background-position: center;
+            background-size: cover;
+            position: absolute;
+            left: 0;
+            top: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .footer-left, .footer-right{
+            flex-basis: 35%;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        .footer-left{
+
+            text-align: left;
+            color: #4A4A4A;
+        }
+
+        .footer-right{
+            text-align: right;
+            color: #4A4A4A;
+        }
+        .footer h3{
+            margin: 20px 0;
+            color: #4A4A4A;
+        }
+
+        .footer-center h3{
+            position: relative;
+            font-size: 40px;
+            /*top: 10%;*/
+            text-align: center;
+            margin: 40px 0px;
+        }
+        .footer p{
+            /*margin-top: 0.25cm;*/
+            margin-bottom: 0.25cm;
+        }
+
+        .footer-center{
+            color: #4A4A4A;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .social{
+            margin-top: 20px;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 25px;
+        }
+        .social .fa-brands{
+            /*border: 3px solid #4A4A4A;*/
+            cursor: pointer;
+            transition: .5s;
+            /*border-radius: 100%;*/
+        }
+        .social .fa-brands:hover{
+            background: #4A4A4A;
+            color: #fff;
+            transform: translateY(-8px);
+        }
+        /*.search-box:hover > .search-txt{*/
+        /*    width: 260px;*/
+        /*    padding: 0 6px;*/
+
+
+
+    </style>
+</head>
+<body>
+<header th:insert="header"></header>
+<div th:insert="footer"></div>
+
+
+
+<div class="panel">
+    <section id="myCoursesSection">
+        <h2>My Courses</h2>
+        <ul id="myCoursesList">
+            <!-- Courses will be dynamically added here using JavaScript -->
+        </ul>
+    </section>
+
+    <section id="favoriteTasksSection">
+        <h2>Favorite Tasks</h2>
+        <ul id="favoriteTasksList">
+            <!-- Favorite tasks will be dynamically added here using JavaScript -->
+        </ul>
+    </section>
+
+    <section id="unsolvedTasksSection">
+        <h2>Unsolved Tasks</h2>
+        <ul id="unsolvedTasksList">
+            <!-- Unsolved tasks will be dynamically added here using JavaScript -->
+        </ul>
+    </section>
+
+    <section id="solvedTasksSection">
+        <h2>Solved Tasks</h2>
+        <ul id="solvedTasksList">
+            <!-- Solved tasks will be dynamically added here using JavaScript -->
+        </ul>
+    </section>
+</div>
+
+<div class="panel">
+    <section>
+        <h2>Last Login</h2>
+        <p id="lastLogin">Loading...</p>
+    </section>
+</div>
+
+
+<script>
+    // Simulating dynamic content with JavaScript
+    document.getElementById("myCoursesList").innerHTML = `
+            <li>HTML and CSS Basics</li>
+            <li>JavaScript Fundamentals</li>
+            <li>Web Design Principles</li>
+        `;
+
+    document.getElementById("favoriteTasksList").innerHTML = `
+            <li>Task 1</li>
+            <li>Task 3</li>
+        `;
+
+    document.getElementById("unsolvedTasksList").innerHTML = `
+            <li>Task 2</li>
+            <li>Task 4</li>
+        `;
+
+    document.getElementById("solvedTasksList").innerHTML = `
+            <li>Task 5</li>
+            <li>Task 6</li>
+        `;
+
+    // Simulating last login time
+    const lastLoginDate = new Date(); // Replace with actual last login time
+    document.getElementById("lastLogin").innerText = `Last Login: ${lastLoginDate.toLocaleString()}`;
+</script>
+
+</body>
+</html>
+
