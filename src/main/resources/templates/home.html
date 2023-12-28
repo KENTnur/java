@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -40,8 +40,8 @@
          <p class="role">studen</p>
          <a href="profile.html" class="btn">view profile</a>
          <div class="flex-btn">
-            <a href="login.html" class="option-btn">login</a>
-            <a href="register.html" class="option-btn">register</a>
+            <a th:href="@{/login}" class="option-btn">login</a>
+            <a th:href="@{/register}" class="option-btn">register</a>
          </div>
       </div>
 
