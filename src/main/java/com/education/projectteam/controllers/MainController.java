@@ -4,6 +4,8 @@ import com.education.projectteam.models.Book;
 import com.education.projectteam.repo.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -37,5 +39,10 @@ public class MainController {
         mv.setViewName("listProducts");
         mv.addObject("products", products);
         return mv;
+    }
+
+    @GetMapping("/liblary")
+    public String liblary(){
+        return "Liblary";
     }
 }

@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.education.projectteam.models.Book;
 import com.education.projectteam.repo.BookRepository;
+import com.education.projectteam.util.ImageUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
@@ -14,7 +15,7 @@ public class BookService {
     @Autowired
     BookRepository bookRepository;
 
-    public void  saveBookToDB(MultipartFile file,String name,String description) {
+    public void  saveBookToDB(MultipartFile file,String name,String description , String Author) {
         Book p = new Book();
         String fileName = StringUtils.cleanPath(file.getOriginalFilename());
         if(fileName.contains("..")) {
@@ -22,6 +23,7 @@ public class BookService {
         }
         try {
             p.setImage(Base64.getEncoder().encodeToString(file.getBytes()));
+//            p.setImage(ImageUtil.compressImage(bytes));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -39,10 +41,11 @@ public class BookService {
     {
         bookRepository.deleteById(id);
     }
-    public void chageBookName(Long id ,String name) {
+    public void chageBookName(Long id ,String name ,String Author) {
         Book p = new Book();
         p = bookRepository.findById(id).get();
         p.setName(name);
+        p.setAuthor(Author);
         bookRepository.save(p);
     }
     public void changeBookDescription(Long id , String description) {

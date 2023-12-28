@@ -15,10 +15,13 @@ public class BookDto {
     private Long id;
     @NotEmpty
     private String name;
-    @NotEmpty
     private String description;
-
+    @NotEmpty
+    private String Author;
     private int views;
+//    @NotEmpty
+//    private byte[] image;
+
     @NotEmpty
     private String image;
 }

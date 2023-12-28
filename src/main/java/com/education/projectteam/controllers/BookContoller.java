@@ -34,9 +34,10 @@ public class BookContoller {
     @PostMapping("/addP")
     public String saveProduct(@RequestParam("file") MultipartFile file,
                               @RequestParam("pname") String name,
-                              @RequestParam("desc") String desc)
+                              @RequestParam("desc") String desc,
+                              @RequestParam("Author") String Author)
     {
-        bookService.saveBookToDB(file, name, desc);
+        bookService.saveBookToDB(file, name, desc , Author);
         return "redirect:/listBook.html";
     }
 
@@ -50,9 +51,10 @@ public class BookContoller {
 
     @PostMapping("/changeName")
     public String changePname(@RequestParam("id") Long id,
-                              @RequestParam("newPname") String name)
+                              @RequestParam("newPname") String name,
+                              @RequestParam("Author") String Author)
     {
-        bookService.chageBookName(id, name);
+        bookService.chageBookName(id, name , Author);
         return "redirect:/listBook.html";
     }
     @PostMapping("/changeDescription")

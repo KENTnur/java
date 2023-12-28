@@ -16,10 +16,17 @@ public class Book {
     @Column
     private String name;
     @Column
+    private String Author;
+
+    @Column
     private String description;
+
     @Column
     private int views;
+
+//    @Lob
+//    private byte[] image;
+
     @Lob
-    @Column(columnDefinition = "MEDIUMBLOB")
     private String image;
 }

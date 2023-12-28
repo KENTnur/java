@@ -10,6 +10,5 @@ public class MyEduController {
     @GetMapping("/MyEducation")
     public String myeduMain(Model model){
         return "myedu-main";
-
     }
 }
