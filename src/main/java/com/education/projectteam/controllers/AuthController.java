@@ -28,7 +28,7 @@ public class AuthController {
 
     @GetMapping("/main")
     public String home(){
-        return "main";
+        return "home";
     }
 
     @GetMapping("/login")
@@ -67,7 +67,7 @@ public class AuthController {
         model.addAttribute("users", users);
         return "users";
     }
-    @GetMapping("/userProfile/{id}")
+    @GetMapping("/profile/{id}")
     public String listRegisteredUsers(@PathVariable(value = "id") long id, Model model){
         if(!userRepository.existsById(id)){
             return "redirect:/main";
@@ -76,29 +76,27 @@ public class AuthController {
         ArrayList<User> result = new ArrayList<>();
         post.ifPresent(result::add);
         model.addAttribute("user",result);
-        return "UserProfile";
+        return "profile";
     }
 
-    @GetMapping("/userProfile/{id}/edit")
+    @GetMapping("/profile/{id}/update")
     public String userProfileEdit(@PathVariable(value = "id") long id, Model model) {
         if(!userRepository.existsById(id)){
-            return "redirect:/main";
+            return "redirect:/home";
         }
         Optional<User> post =  userRepository.findById(id);
         ArrayList<User> result = new ArrayList<>();
         post.ifPresent(result::add);
         model.addAttribute("user",result);
-        return "UserProfileEdit";
+        return "profile";
     }
-    @PostMapping("/userProfile/{id}/edit")
-    public String BlogPostUpdate (@PathVariable(value = "id") long id, @RequestParam String name, @RequestParam String nickname, @RequestParam String location , @RequestParam String link , @RequestParam String university , Model model) {
+    @PostMapping("/profile/{id}/update")
+    public String BlogPostUpdate (@PathVariable(value = "id") long id, @RequestParam String name, @RequestParam String email , @RequestParam String password, Model model) {
         User user = userRepository.findById(id).orElseThrow();
         user.setName(name);
-        user.setLinkSocial(link);
-        user.setNickname(nickname);
-        user.setLocation(location);
-        user.setUniversity(university);
+        user.setEmail(email);
+        user.setPassword(password);
         userRepository.save(user);
-        return "redirect:/userProfile";
+        return "redirect:/profile";
     }
 }

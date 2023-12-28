@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -36,10 +37,10 @@ public class SpringSecurity {
                         authorize.requestMatchers("/register/**").permitAll()
                                 .requestMatchers("/main").permitAll()
                                 .requestMatchers("/static/**").permitAll()
-                                .requestMatchers("/userProfile/{id}").permitAll()
-                                .requestMatchers("/userProfile/{id}/edit").permitAll()
-                                .requestMatchers("/liblary").permitAll()
+                                .requestMatchers("/profile/{id}").permitAll()
+                                .requestMatchers("/profile/{id}/update").permitAll()
                                 .requestMatchers("/users").permitAll().requestMatchers("/img").permitAll()
+                                .requestMatchers("/resources/**", "/images/**", "/css/**", "/js/**", "/").permitAll()
                 ).formLogin(
                         form -> form
                                 .loginPage("/login")

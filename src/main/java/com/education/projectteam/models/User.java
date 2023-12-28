@@ -37,16 +37,4 @@ public class User
             inverseJoinColumns={@JoinColumn(name="ROLE_ID", referencedColumnName="ID")})
     private List<Role> roles = new ArrayList<>();
 
-    @Column
-    private String nickname;
-
-    @Column
-    private String location;
-
-    @Column
-    private String linkSocial;
-
-    @Column
-    private String university;
-
 }

@@ -22,12 +22,4 @@ public class UserDto {
     private String email;
     @NotEmpty(message = "Password should not be empty")
     private String password;
-
-    private String nickname;
-
-    private String location;
-
-    private String linkSocial;
-
-    private String university;
 }

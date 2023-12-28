@@ -1,0 +1,28 @@
+<header th:fragment="header">
+
+    <a th:href="@{/main}">
+        <img src="https://raw.githubusercontent.com/thqu1et/Education-Web/682b0c3bd40f09bd757ea5ac924b3b1eb036c078/src/main/resources/static/logo_askar.svg" alt="user-profile-img" class="logo">
+    </a>
+    <nav>
+        <ul>
+            <li><a href="">Courses &blacktriangledown;</a>
+                <ul>
+                    <li><a href="#">HTML</a></li>
+                    <li><a href="#">CSS</a></li>
+                    <li><a href="#">JavaScript &blacktriangledown;</a>
+                        <ul>
+                            <li><a href="#">JQuery</a></li>
+                            <li><a href="#">Node.js</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="/MyEducation">My education </a></li>
+            <li><a th:href="@{/liblary}">Library</a></li>
+            <li><a th:href="@{/login}">Log in</a></li>
+            <li><a th:href="@{/register}">Sing up</a></li>
+        </ul>
+    </nav>
+</header>
+
+xmlns:th="http://www.thymeleaf.org"

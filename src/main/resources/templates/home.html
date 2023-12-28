@@ -7,10 +7,10 @@
    <title>home</title>
 
    <!-- font awesome cdn link  -->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
 
    <!-- custom css file link  -->
-   <link rel="stylesheet" href="../static/css/style.css">
+   <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}">
 
 
 </head>
@@ -20,7 +20,7 @@
    
    <section class="flex">
 
-      <a href="home.html" class="logo">Educa.</a>
+      <a href="home.html" th:href="@{/main}" class="logo">A&K.</a>
 
       <form action="search.html" method="post" class="search-form">
          <input type="text" name="search_box" required placeholder="search courses..." maxlength="100">
@@ -36,8 +36,8 @@
 
       <div class="profile">
          <img src="../static/images/pic-1.jpg" class="image" alt="">
-         <h3 class="name">shaikh anas</h3>
-         <p class="role">studen</p>
+         <h3 class="name">Abylkhairov Askar</h3>
+         <p class="role">student</p>
          <a href="profile.html" class="btn">view profile</a>
          <div class="flex-btn">
             <a th:href="@{/login}" class="option-btn">login</a>
@@ -55,11 +55,14 @@
       <i class="fas fa-times"></i>
    </div>
 
-   <div class="profile">
+   <div class="profile" th:each="el : ${user}">
       <img src="../static/images/pic-1.jpg" class="image" alt="">
-      <h3 class="name">shaikh anas</h3>
-      <p class="role">studen</p>
-      <a href="profile.html" class="btn">view profile</a>
+      <!--         <h3 class="name" >Abylkhaiyrov Askar</h3>-->
+      <h3 class="name" th:text="${el.name}"></h3>
+      <p class="role">student</p>
+      <a href="profile.html"
+         th:href="'/profile'+ ${el.id}"
+         class="btn">view profile</a>
    </div>
 
    <nav class="navbar">
@@ -257,7 +260,7 @@
 </footer>
 
 <!-- custom js file link  -->
-<script src="../static/js/script.js"></script>
+<script th:src="@{/js/script.js}" type="application/javascript" src="../static/js/script.js"></script>
 
    
 </body>
