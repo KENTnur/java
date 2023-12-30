@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
@@ -320,6 +321,7 @@
         <input type="password" placeholder="Enter Password" id="passwordForm" name="password"
                required>
       </div>
+
       <div class="form-item-other">
         <div class="checkbox">
           <input type="checkbox" id="rememberMeCheckbox" checked>
@@ -328,6 +330,7 @@
         <a href="#">I forgot my password!</a>
       </div>
       <button type="submit">Sign In</button>
+
       <div class="login-card-footer">
         Don't have an account? <a th:href="@{/register}"> Create a free account.</a>
       </div>
