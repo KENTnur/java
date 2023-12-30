@@ -33,6 +33,7 @@ public class UserServiceImpl implements UserService {
         User user = new User();
         user.setName(userDto.getFirstName() + " " + userDto.getLastName());
         user.setEmail(userDto.getEmail());
+        user.setRoleUser(userDto.getRoleUser());
 
         //encrypt the password once we integrate spring security
         //user.setPassword(userDto.getPassword());
@@ -63,6 +64,7 @@ public class UserServiceImpl implements UserService {
         userDto.setFirstName(name[0]);
         userDto.setLastName(name[1]);
         userDto.setEmail(user.getEmail());
+        userDto.setRoleUser(user.getRoleUser());
         return userDto;
     }
 

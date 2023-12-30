@@ -57,6 +57,7 @@ public class AuthController {
             model.addAttribute("user", user);
             return "register";
         }
+
         userService.saveUser(user);
         return "redirect:/register?success";
     }
@@ -67,6 +68,7 @@ public class AuthController {
         model.addAttribute("users", users);
         return "users";
     }
+
     @GetMapping("/profile/{id}")
     public String listRegisteredUsers(@PathVariable(value = "id") long id, Model model){
         if(!userRepository.existsById(id)){
