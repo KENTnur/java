@@ -35,8 +35,8 @@ public class SpringSecurity {
         http.csrf().disable()
                 .authorizeHttpRequests((authorize) ->
                         authorize.requestMatchers("/register/**").permitAll()
-                                .requestMatchers("/main").permitAll()
                                 .requestMatchers("/static/**").permitAll()
+                                .requestMatchers("/main").permitAll()
                                 .requestMatchers("/profile/{id}").permitAll()
                                 .requestMatchers("/profile/{id}/update").permitAll()
                                 .requestMatchers("/users").permitAll().requestMatchers("/img").permitAll()
