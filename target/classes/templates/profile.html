@@ -33,14 +33,14 @@
          <div id="toggle-btn" class="fas fa-sun"></div>
       </div>
 
-      <div class="profile">
-         <img src="../static/images/pic-1.jpg" class="image" alt="">
-         <h3 class="name">Abylkhairov Askar</h3>
-         <p class="role">student</p>
-         <a href="profile.html" class="btn">view profile</a>
+      <div class="profile" th:each="el : ${user}">
+         <img src="https://github.com/thqu1et/Education-Web/blob/main/src/main/resources/static/images/pic-1.jpg?raw=true" class="image" alt="">
+         <h3 class="name" th:text="${el.name}"></h3>
+         <p class="role" th:text="${el.roleUser}"></p>
+         <a href="profile.html" class="btn" th:href="'/profile/'+ ${el.id}">view profile</a>
          <div class="flex-btn">
             <a th:href="@{/login}" class="option-btn">login</a>
-            <a th:href="@{/register}" class="option-btn">register</a>
+            <a th:href="@{/logout}" class="option-btn">logout</a>
          </div>
       </div>
 
@@ -55,10 +55,10 @@
    </div>
 
    <div class="profile" th:each="el : ${user}">
-      <img src="../static/images/pic-1.jpg" class="image" alt="">
+      <img src="https://github.com/thqu1et/Education-Web/blob/main/src/main/resources/static/images/pic-1.jpg?raw=true"  class="image" alt="">
       <!--         <h3 class="name" >Abylkhaiyrov Askar</h3>-->
       <h3 class="name" th:text="${el.name}"></h3>
-      <p class="role">student</p>
+      <p class="role" th:text="${el.roleUser}"></p>
       <a href="profile.html"
          th:href="'/profile'+ ${el.id}"
          class="btn">view profile</a>
@@ -81,10 +81,10 @@
    <div class="info">
 
       <div class="user" th:each="el : ${user}">
-         <img src="../static/images/pic-1.jpg" alt="">
+         <img src="https://github.com/thqu1et/Education-Web/blob/main/src/main/resources/static/images/pic-1.jpg?raw=true" alt="">
          <h3 th:text="${el.name}"></h3>
          <p th:text="${el.roleUser}"></p>
-         <a href="update.html" th:href="'/profile'+ ${el.id} + 'update'" class="inline-btn">update profile</a>
+         <a href="update.html" th:href="'/profile/'+ ${el.id} + '/update'" class="inline-btn">update profile</a>
       </div>
    
       <div class="box-container">
@@ -130,15 +130,14 @@
 
 
 
+<footer th:insert="block/footer :: footer"></footer>
 
-<!--<footer th:insert="footer"></footer>-->
 
+<!--<footer class="footer">-->
 
-<footer class="footer">
+<!--   &copy; copyright @ 2023 by <span>CREATED BY ABYLKHAIYROV & KUDAIBERGANOV</span> | all rights reserved!-->
 
-   &copy; copyright @ 2023 by <span>CREATED BY ABYLKHAIYROV & KUDAIBERGANOV</span> | all rights reserved!
-
-</footer>
+<!--</footer>-->
 
 <!-- custom js file link  -->
 <script th:src="@{/js/script.js}" type="application/javascript" src="../static/js/script.js"></script>

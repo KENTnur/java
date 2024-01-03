@@ -90,15 +90,16 @@ public class AuthController {
         ArrayList<User> result = new ArrayList<>();
         post.ifPresent(result::add);
         model.addAttribute("user",result);
-        return "profile";
+        return "redirect:/profile/{id}";
     }
     @PostMapping("/profile/{id}/update")
-    public String BlogPostUpdate (@PathVariable(value = "id") long id, @RequestParam String name, @RequestParam String email , @RequestParam String password, Model model) {
+    public String BlogPostUpdate (@PathVariable(value = "id") long id, @RequestParam String name, @RequestParam String email , @RequestParam String password, @RequestParam String roleUer, Model model) {
         User user = userRepository.findById(id).orElseThrow();
         user.setName(name);
         user.setEmail(email);
+        user.setRoleUser(roleUer);
         user.setPassword(password);
         userRepository.save(user);
-        return "redirect:/profile";
+        return "redirect:/profile/{id}";
     }
 }

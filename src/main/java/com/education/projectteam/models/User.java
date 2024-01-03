@@ -6,6 +6,7 @@ import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import com.education.projectteam.models.SavedLists;
 
 @Getter
 @Setter
@@ -13,8 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 @Entity
 @Table(name="users")
-public class User
-{
+public class User {
     private static final long serialVersionUID = 1L;
 
     @Id
@@ -32,6 +32,16 @@ public class User
 
     @Column(nullable=false)
     private String roleUser;
+
+    @Column(nullable=false)
+    private int like_video;
+
+    @Column(nullable = false)
+    private int comment_of_user;
+
+//    @ManyToMany(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
+//    @Column(nullable=false)
+//    private List<SavedLists> savedplayList = new ArrayList<>();
 
     @ManyToMany(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
     @JoinTable(

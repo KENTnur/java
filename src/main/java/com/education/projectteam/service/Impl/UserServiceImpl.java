@@ -58,6 +58,25 @@ public class UserServiceImpl implements UserService {
                 .collect(Collectors.toList());
     }
 
+    private User count(int like_video , int comment_of_user , Long id){
+//        Post post1 = postRepository.findById(id).orElseThrow();
+//
+//        int views = post1.getViews();
+//        views++;
+//        post1.setViews(views);
+//        postRepository.save(post1);
+//        return "blogDetails";
+
+        User user = userRepository.findById(id).orElseThrow();
+
+        like_video = user.getLike_video();
+        like_video++;
+
+        user.setLike_video(like_video);
+        userRepository.save(user);
+        return user;
+    }
+
     private UserDto convertEntityToDto(User user){
         UserDto userDto = new UserDto();
         String[] name = user.getName().split(" ");
