@@ -90,7 +90,7 @@ public class AuthController {
         ArrayList<User> result = new ArrayList<>();
         post.ifPresent(result::add);
         model.addAttribute("user",result);
-        return "redirect:/profile/{id}";
+        return "redirect:/profile/{id}/update";
     }
     @PostMapping("/profile/{id}/update")
     public String BlogPostUpdate (@PathVariable(value = "id") long id, @RequestParam String name, @RequestParam String email , @RequestParam String password, @RequestParam String roleUer, Model model) {
