@@ -1,20 +1,20 @@
-/Users/scity/IdeaProjects/Education-Web/src/main/java/com/education/projectteam/controllers/AuthController.java
-/Users/scity/IdeaProjects/Education-Web/src/main/java/com/education/projectteam/repo/BookRepository.java
-/Users/scity/IdeaProjects/Education-Web/src/main/java/com/education/projectteam/models/Book.java
-/Users/scity/IdeaProjects/Education-Web/src/main/java/com/education/projectteam/Dto/BookDto.java
-/Users/scity/IdeaProjects/Education-Web/src/main/java/com/education/projectteam/repo/UserRepository.java
-/Users/scity/IdeaProjects/Education-Web/src/main/java/com/education/projectteam/service/UserService.java
-/Users/scity/IdeaProjects/Education-Web/src/main/java/com/education/projectteam/Dto/UserDto.java
-/Users/scity/IdeaProjects/Education-Web/src/main/java/com/education/projectteam/ProjectTeamApplication.java
-/Users/scity/IdeaProjects/Education-Web/src/main/java/com/education/projectteam/config/SpringSecurity.java
-/Users/scity/IdeaProjects/Education-Web/src/main/java/com/education/projectteam/util/ImageUtil.java
-/Users/scity/IdeaProjects/Education-Web/src/main/java/com/education/projectteam/models/User.java
-/Users/scity/IdeaProjects/Education-Web/src/main/java/com/education/projectteam/models/Role.java
-/Users/scity/IdeaProjects/Education-Web/src/main/java/com/education/projectteam/controllers/BookContoller.java
-/Users/scity/IdeaProjects/Education-Web/src/main/java/com/education/projectteam/service/BookService.java
-/Users/scity/IdeaProjects/Education-Web/src/main/java/com/education/projectteam/security/CustomUserDetailsService.java
-/Users/scity/IdeaProjects/Education-Web/src/main/java/com/education/projectteam/models/SavedLists.java
-/Users/scity/IdeaProjects/Education-Web/src/main/java/com/education/projectteam/controllers/MainController.java
-/Users/scity/IdeaProjects/Education-Web/src/main/java/com/education/projectteam/controllers/MyEduController.java
-/Users/scity/IdeaProjects/Education-Web/src/main/java/com/education/projectteam/repo/RoleRepository.java
-/Users/scity/IdeaProjects/Education-Web/src/main/java/com/education/projectteam/service/Impl/UserServiceImpl.java
+C:\Users\times\OneDrive\Рабочий стол\java\src\main\java\com\education\projectteam\controllers\AuthController.java
+C:\Users\times\OneDrive\Рабочий стол\java\src\main\java\com\education\projectteam\models\Book.java
+C:\Users\times\OneDrive\Рабочий стол\java\src\main\java\com\education\projectteam\service\Impl\UserServiceImpl.java
+C:\Users\times\OneDrive\Рабочий стол\java\src\main\java\com\education\projectteam\repo\UserRepository.java
+C:\Users\times\OneDrive\Рабочий стол\java\src\main\java\com\education\projectteam\security\CustomUserDetailsService.java
+C:\Users\times\OneDrive\Рабочий стол\java\src\main\java\com\education\projectteam\controllers\MainController.java
+C:\Users\times\OneDrive\Рабочий стол\java\src\main\java\com\education\projectteam\config\SpringSecurity.java
+C:\Users\times\OneDrive\Рабочий стол\java\src\main\java\com\education\projectteam\util\ImageUtil.java
+C:\Users\times\OneDrive\Рабочий стол\java\src\main\java\com\education\projectteam\service\UserService.java
+C:\Users\times\OneDrive\Рабочий стол\java\src\main\java\com\education\projectteam\models\Role.java
+C:\Users\times\OneDrive\Рабочий стол\java\src\main\java\com\education\projectteam\controllers\BookContoller.java
+C:\Users\times\OneDrive\Рабочий стол\java\src\main\java\com\education\projectteam\controllers\MyEduController.java
+C:\Users\times\OneDrive\Рабочий стол\java\src\main\java\com\education\projectteam\models\User.java
+C:\Users\times\OneDrive\Рабочий стол\java\src\main\java\com\education\projectteam\Dto\BookDto.java
+C:\Users\times\OneDrive\Рабочий стол\java\src\main\java\com\education\projectteam\Dto\UserDto.java
+C:\Users\times\OneDrive\Рабочий стол\java\src\main\java\com\education\projectteam\repo\BookRepository.java
+C:\Users\times\OneDrive\Рабочий стол\java\src\main\java\com\education\projectteam\repo\RoleRepository.java
+C:\Users\times\OneDrive\Рабочий стол\java\src\main\java\com\education\projectteam\models\SavedLists.java
+C:\Users\times\OneDrive\Рабочий стол\java\src\main\java\com\education\projectteam\ProjectTeamApplication.java
+C:\Users\times\OneDrive\Рабочий стол\java\src\main\java\com\education\projectteam\service\BookService.java
